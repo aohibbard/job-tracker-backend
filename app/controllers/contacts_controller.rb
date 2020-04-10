@@ -1,7 +1,8 @@
 class ContactsController < ApplicationController
 
     def index 
-        contacts = Contact.all 
+        contacts = Contact.find_by(user_id: params[:user_id])
+        binding.pry
         render json: JobSerializer.new(contacts)
     end 
 
@@ -9,7 +10,9 @@ class ContactsController < ApplicationController
     end 
 
     def show 
-        contact = Contact.find_by(id: params[:id])
+        binding.pry
+        contact = Contact.find_by(id: params[:id], user_id: params[:user_id])
+        # contact = Contact.find_by(id: params[:id])
         render json: JobSerializer.new(contact)
     end 
 
