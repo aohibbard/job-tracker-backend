@@ -2,7 +2,6 @@ class ContactsController < ApplicationController
 
     def index 
         contacts = Contact.find_by(user_id: params[:user_id])
-        binding.pry
         render json: ContactSerializer.new(contacts)
     end 
 
