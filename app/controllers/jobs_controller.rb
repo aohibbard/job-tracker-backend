@@ -6,6 +6,10 @@ class JobsController < ApplicationController
     end 
 
     def create 
+        job = Job.create(job_params)
+        if job.save 
+            render json: JobSerializer.new(job)
+        end 
     end 
 
     def show 
@@ -16,5 +20,11 @@ class JobsController < ApplicationController
     # edit
     # update
     # destroy
+
+    private 
+
+    def job_params 
+        params.require(:job).permit(:title, :company, :due, :applie, :url, :user_id)
+    end 
 
 end
