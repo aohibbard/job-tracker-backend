@@ -1,7 +1,7 @@
 class ContactsController < ApplicationController
 
     def index 
-        contacts = Contact.find_by(user_id: params[:user_id])
+        contacts = Contact.where(:user_id => params[:user_id])
         render json: ContactSerializer.new(contacts)
     end 
 
