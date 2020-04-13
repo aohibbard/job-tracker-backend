@@ -6,14 +6,13 @@ class ContactsController < ApplicationController
     end 
 
     def create 
-        contact = Contact.create(contact_params)
+        contact = Contact.create(name: params[:name], company: params[:company], notes: params[:notes], user_id: 1)
         if contact.save 
             render json: ContactSerializer.new(contact)
         end 
     end 
 
     def show 
-        binding.pry
         contact = Contact.find_by(id: params[:id], user_id: params[:user_id])
         # contact = Contact.find_by(id: params[:id])
         render json: ContactSerializer.new(contact)

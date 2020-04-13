@@ -1,5 +1,5 @@
 class ContactSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :name, :company, :notes
+  attributes :id, :name, :company, :notes
   belongs_to :user
 end

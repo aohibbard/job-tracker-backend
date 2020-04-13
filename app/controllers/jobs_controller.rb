@@ -1,12 +1,12 @@
 class JobsController < ApplicationController
 
     def index 
-        jobs = Job.all 
+        jobs = Job.where(:user_id => params[:user_id])
         render json: JobSerializer.new(jobs)
     end 
 
     def create 
-        job = Job.create(job_params)
+        job = Job.create(title: params[:title], company: params[:company], due: params[:due], applied: params[:applied], user_id: 1)
         if job.save 
             render json: JobSerializer.new(job)
         end 
@@ -24,7 +24,7 @@ class JobsController < ApplicationController
     private 
 
     def job_params 
-        params.require(:job).permit(:title, :company, :due, :applie, :url, :user_id)
+        params.require(:job).permit(:title, :company, :due, :applied, :url, :user_id)
     end 
 
 end
