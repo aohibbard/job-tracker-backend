@@ -21,7 +21,11 @@ class JobsController < ApplicationController
 
     # edit
     # update
-    # destroy
+
+    def destroy 
+        job = Job.find_by(id: params[:id])
+        job.destroy
+    end 
 
     private 
 
