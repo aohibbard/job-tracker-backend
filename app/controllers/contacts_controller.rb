@@ -6,6 +6,7 @@ class ContactsController < ApplicationController
     end 
 
     def create 
+        # change back to params after user ID sorted
         contact = Contact.create(name: params[:name], company: params[:company], notes: params[:notes], user_id: 1)
         if contact.save 
             render json: ContactSerializer.new(contact)
@@ -16,6 +17,9 @@ class ContactsController < ApplicationController
         contact = Contact.find_by(id: params[:id], user_id: params[:user_id])
         # contact = Contact.find_by(id: params[:id])
         render json: ContactSerializer.new(contact)
+    end 
+
+    def destroy 
     end 
 
     private 

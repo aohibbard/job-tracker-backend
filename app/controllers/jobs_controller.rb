@@ -6,6 +6,8 @@ class JobsController < ApplicationController
     end 
 
     def create 
+        # change back to params after user ID sorted
+        # do some logic with date
         job = Job.create(title: params[:title], company: params[:company], due: params[:due], applied: params[:applied], user_id: 1)
         if job.save 
             render json: JobSerializer.new(job)
