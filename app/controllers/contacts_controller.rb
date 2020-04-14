@@ -19,6 +19,12 @@ class ContactsController < ApplicationController
         render json: ContactSerializer.new(contact)
     end 
 
+    def update
+        contact = Contact.find_by(id: params[:id])
+        contact.update(contact_params)
+        render json: ContactSerializer.new(contact)
+    end 
+
     def destroy 
         contact = Contact.find_by(id: params[:id])
         contact.destroy

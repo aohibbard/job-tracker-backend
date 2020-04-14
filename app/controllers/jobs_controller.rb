@@ -19,8 +19,11 @@ class JobsController < ApplicationController
         render json: JobSerializer.new(job)
     end 
 
-    # edit
-    # update
+    def update
+        job = Job.find_by(id: params[:id])
+        job.update(job_params)
+        render json: JobSerializer.new(job)
+    end 
 
     def destroy 
         job = Job.find_by(id: params[:id])
