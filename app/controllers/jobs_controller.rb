@@ -27,7 +27,7 @@ class JobsController < ApplicationController
 
     def destroy 
         job = Job.find_by(id: params[:id])
-        job.destroy
+        job.delete
     end 
 
     private 
