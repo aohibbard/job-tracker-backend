@@ -14,6 +14,7 @@ class SessionsController < ApplicationController
                 status: 401,
                 errors: ['no such user', 'verify credentials and try again or signup']
             }
+        end
     end 
 
     def is_logged_in?
