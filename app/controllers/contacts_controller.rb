@@ -21,7 +21,7 @@ class ContactsController < ApplicationController
 
     def update
         contact = Contact.find_by(id: params[:id])
-        contact.update(contact_params)
+        contact.update(name: params[:name], company: params[:company], notes: params[:notes], user_id: 1)
         render json: ContactSerializer.new(contact)
     end 
 
