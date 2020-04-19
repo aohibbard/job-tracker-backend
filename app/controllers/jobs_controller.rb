@@ -21,8 +21,6 @@ class JobsController < ApplicationController
 
     def update
         job = Job.find_by(id: params[:id])
-        #        contact.update(name: params[:name], company: params[:company], notes: params[:notes], user_id: 1)
-
         job.update(title: params[:title], company: params[:company], applied: params[:applied], due: params[:due], url: params[:url], user_id: 1)
         render json: JobSerializer.new(job)
     end 
