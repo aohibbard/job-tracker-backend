@@ -12,7 +12,7 @@ gem 'puma', '~> 4.1'
 gem 'fast_jsonapi'
 gem 'pry'
 # for React frontend integration
-gem 'foreman'
+# gem 'foreman'
 # gem 'bootstrap'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.7'
