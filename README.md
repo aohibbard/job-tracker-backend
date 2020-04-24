@@ -1,24 +1,16 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Jobtracker Backend is the Rails API back end to a React application. The backend is to be deployed at localhost:3000 to handle the front end's API call. The front end is available at: https://github.com/aohibbard/job-tracker-frontend
 
-Things you may want to cover:
-
-* Ruby version
+* Version
+Rub 2.6.1 & Rails 6.0.2
 
 * System dependencies
+The API is buildt on a PostgreSQL database with Puma 4.1 as the app server.
 
-* Configuration
-
-* Database creation
 
 * Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
+Database can be initialized through the commands <rails db:migrate>. Seed data can be initialized through <rails db:seed>
 
 * Deployment instructions
-
-* ...
+The API can be run with the <rails s> command.
