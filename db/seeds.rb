@@ -6,35 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create(username: "Steve Jobs")
-User.create(username: "Reid Hoffman")
+User.create(username: "Jane Doe")
+# User.create(username: "Reid Hoffman")
 
-Contact.create(name: "Steve Wozniak", company: "Apple", notes: "Code wiz", user_id: 1)
-Contact.create(name: "Reed Hastings", company: "Netflix", notes: "Los Gatos tennis", user_id: 1)
+Contact.create(name: "Richard Hendricks", company: "Pied Piper", notes: "Tabs not spaces", user_id: 1)
+Contact.create(name: "Gavin Belson", company: "Hooli", notes: "Is he in Tibet?", user_id: 1)
+Contact.create(name: "Lori Bream", company: "Raviga", notes: "Managing Partner", user_id: 1)
+
 
 Job.create(title: "CEO", company: "Apple", applied: false, user_id: 1)
 Job.create(title: "Founder", company: "NeXT Computer", applied: true, user_id: 1)
 Job.create(title: "Funder", company: "Pixar", applied: true, user_id: 1)
 
-
-# #   create_table "contacts", force: :cascade do |t|
-# t.string "name"
-# t.string "company"
-# t.text "notes"
-# t.bigint "user_id"
-# t.datetime "created_at", precision: 6, null: false
-# t.datetime "updated_at", precision: 6, null: false
-# t.index ["user_id"], name: "index_contacts_on_user_id"
-# end
-
-# create_table "jobs", force: :cascade do |t|
-# t.string "title"
-# t.string "company"
-# t.date "due"
-# t.boolean "applied"
-# t.string "url"
-# t.bigint "user_id"
-# t.datetime "created_at", precision: 6, null: false
-# t.datetime "updated_at", precision: 6, null: false
-# t.index ["user_id"], name: "index_jobs_on_user_id"
-# end
