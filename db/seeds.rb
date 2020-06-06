@@ -12,8 +12,11 @@ Contact.create(name: "Richard Hendricks", company: "Pied Piper", notes: "Tabs no
 Contact.create(name: "Gavin Belson", company: "Hooli", notes: "Is he in Tibet?", user_id: 1)
 Contact.create(name: "Lori Bream", company: "Raviga", notes: "Managing Partner", user_id: 1)
 
+# Job.create(title: "CEO", company: "Apple", applied: false, user_id: 1)
+# Job.create(title: "Founder", company: "NeXT Computer", applied: true, user_id: 1)
+# Job.create(title: "Funder", company: "Pixar", applied: true, user_id: 1)
 
-Job.create(title: "CEO", company: "Apple", applied: false, user_id: 1)
-Job.create(title: "Founder", company: "NeXT Computer", applied: true, user_id: 1)
-Job.create(title: "Funder", company: "Pixar", applied: true, user_id: 1)
-
+20.times do 
+    Contact.create(name: Faker::Name.name, company: Faker::Company.name, notes: Faker::Company.catch_phrase, email: Faker::Internet.email, phone: Faker::PhoneNumber.phone_number, user_id: 1)
+    Job.create(title: Faker::Company.profession, company: Faker::Company.name, applied: false, user_id: 1)
+end 

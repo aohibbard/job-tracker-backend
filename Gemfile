@@ -11,6 +11,7 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 4.1'
 gem 'fast_jsonapi'
 gem 'pry'
+gem 'faker'
 # for React frontend integration
 # gem 'foreman'
 # gem 'bootstrap'
