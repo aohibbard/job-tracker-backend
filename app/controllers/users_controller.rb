@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     end
 
     def show
-        user = User.find(params[:id])
+      user = User.find(params[:id])
        if user
         render json: UserSerializer.new(user)
         else
@@ -46,18 +46,3 @@ class UsersController < ApplicationController
         params.require(:user).permit(:username)
       end
     end
-
-    # def index
-    #     user = User.all 
-    #     render json: UserSerializers.new(user)
-    # end 
-
-    # def create 
-    #     user = User.create(username: params[:username])
-    #     render json: UserSerializer.new(user)
-    # end 
-
-    # def show 
-    #     user = User.find(params[:id])
-    #     render json: UserSerializer.new(user)
-    # end 

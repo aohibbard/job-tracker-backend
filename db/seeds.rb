@@ -18,5 +18,5 @@ Contact.create(name: "Lori Bream", company: "Raviga", notes: "Managing Partner",
 
 20.times do 
     Contact.create(name: Faker::Name.name, company: Faker::Company.name, notes: Faker::Company.catch_phrase, email: Faker::Internet.email, phone: Faker::PhoneNumber.phone_number, user_id: 1)
-    Job.create(title: Faker::Company.profession, company: Faker::Company.name, applied: false, user_id: 1)
+    Job.create(title: Faker::Company.profession, company: Faker::Company.name, due: Faker::Date.in_date_period(year: 2020, month: 09) applied: false, user_id: 1)
 end 

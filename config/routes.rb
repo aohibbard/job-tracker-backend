@@ -1,10 +1,18 @@
+# set scope for user autho
+# Rails.application.routes.draw do
+#   resources :users, only: [:create, :show, :index]
+# end
+
+
+
+
 Rails.application.routes.draw do
 
   scope :api do 
     post '/login', to: 'sessions#create'
     delete '/logout', to: 'sessions#destroy'
     get '/logged_in', to: 'sessions#is_logged_in?'
-    resources :users do 
+    resources :users, only: [:create, :show, :index] do 
       resources :jobs, :contacts
     end 
   end 

@@ -1,8 +1,8 @@
 class SessionsController < ApplicationController
 
-    # change to user Fast JSON
     def create 
         @user = User.find_by(username: params[:username])
+        # add to conditional @user.authenticate(session_params[:password])
         if @user
             login!
             render json: {
@@ -37,6 +37,13 @@ class SessionsController < ApplicationController
             status: 200,
             logged_out: true 
         }
+    end 
+
+    private 
+
+    # add additional user params name, email, pw
+    def session_params
+        params.require(:user).permit(:username)
     end 
 
 end
